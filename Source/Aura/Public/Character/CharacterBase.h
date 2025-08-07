@@ -19,4 +19,10 @@ protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
+	// Skeletal mesh component for the weapon
+	// Using TObjectPtr helps add features in editor, f.e.:
+	// * Access tracking (how often is accessed or derreferenced)
+	// * Lazy loading (only loaded until needed)
+	UPROPERTY(EditAnywhere, Category = "Combat")
+	TObjectPtr<USkeletalMeshComponent> Weapon;
 };
